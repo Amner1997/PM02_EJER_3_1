@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM02_EJER_3_1.MainPage">
+
+    <StackLayout Padding="20">
+
+        <Label Text="Tomar Foto"
+               TextColor="Black"
+               HorizontalOptions="CenterAndExpand"
+               FontSize="24"
+               FontAttributes="Bold"
+               Margin="0,20,0,10"/>
+
+        <Frame BorderColor="#2196F3"
+               CornerRadius="10"
+               Padding="10"
+               HasShadow="True">
+            <Image x:Name="imgFoto"
+                   Source="imagegallery.png"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center"
+                   WidthRequest="300"
+                   HeightRequest="220">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                          NumberOfTapsRequired="1"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Frame>
+
+        <StackLayout Spacing="10">
+            <Label Text="Nombres:"
+                   TextColor="Black"
+                   FontSize="18"/>
+            <Entry x:Name="txtNombres"
+                   Keyboard="Text"
+                   Placeholder=""
+                   IsEnabled="True"/>
+        </StackLayout>
+
+        <StackLayout Spacing="10">
+            <Label Text="Apellidos:"
+                   TextColor="Black"
+                   FontSize="18"/>
+            <Entry x:Name="txtApellidos"
+                   Keyboard="Text"
+                   Placeholder=""
+                   IsEnabled="True"/>
+        </StackLayout>
+
+        <StackLayout Spacing="10">
+            <Label Text="Sexo:"
+                   TextColor="Black"
+                   FontSize="18"/>
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <RadioButton x:Name="rbMascu" Value="Masculino"/>
+                <Label Text="Masculino"
+                       TextColor="Black"
+                       VerticalTextAlignment="Center"
+                       FontSize="18"/>
+                <RadioButton x:Name="rbFemenino" Value="Femenino"/>
+                <Label Text="Femenino"
+                       TextColor="Black"
+                       VerticalTextAlignment="Center"
+                       FontSize="18"/>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout Spacing="10">
+            <Label Text="Dirección:"
+                   TextColor="Black"
+                   FontSize="18"/>
+            <Entry x:Name="txtDireccion"
+                   Keyboard="Text"
+                   MaxLength="50"
+                   Placeholder=""/>
+        </StackLayout>
+
+        <Grid Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnAdd"
+                    Text="Agregar"
+                    ImageSource="plus.png"
+                    HorizontalOptions="FillAndExpand"
+                    Grid.Column="0"
+                    BackgroundColor="#00CC99"
+                    CornerRadius="25"
+                    Clicked="btnAdd_Clicked"/>
+            <Button x:Name="btnList"
+                    Text="Lista Alumnos"
+                    ImageSource="list.png"
+                    HorizontalOptions="FillAndExpand"
+                    Grid.Column="1"
+                    BackgroundColor="#00CC99"
+                    CornerRadius="25"
+                    Clicked="btnList_Clicked"/>
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>
+
